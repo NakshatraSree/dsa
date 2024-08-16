@@ -11,3 +11,5 @@ def floor(root,x):
     if(maxi != 0):
         return maxi
     return -1
+
+#BST
