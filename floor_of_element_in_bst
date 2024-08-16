@@ -1,0 +1,13 @@
+def floor(root,x):
+    maxi=0
+    while(root!=None):
+                if(root.data>x):
+                    root=root.left
+                elif(root.data<x):
+                    maxi=max(maxi,root.data)
+                    root=root.right
+                else:
+                    return root.data
+    if(maxi != 0):
+        return maxi
+    return -1
