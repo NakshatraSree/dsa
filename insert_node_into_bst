@@ -1,0 +1,32 @@
+class TreeNode(object):
+     def __init__(self, val=0, left=None, right=None):
+         self.val = val
+         self.left = left
+         self.right = right
+class Solution(object):
+    def insertIntoBST(self, root, val):
+        """
+        :type root: TreeNode
+        :type val: int
+        :rtype: TreeNode
+        """
+        if root is None:
+            return TreeNode(val)
+        self.insert(root,val)
+        return root
+    def insert(self,root,val):
+        while(root!=None):
+            if(root.val>val):
+                if(root.left):
+                   root=root.left
+                else:
+                    root.left=TreeNode()
+                    root.left.val=val
+                    return
+            elif(root.val<val):
+                if(root.right):
+                    root=root.right
+                else:
+                    root.right=TreeNode()
+                    root.right.val=val
+                    return
